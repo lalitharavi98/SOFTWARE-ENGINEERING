@@ -1,0 +1,24 @@
+runtime: php55
+api_version: 1
+threadsafe: true
+
+handlers:
+
+- url: /img
+  static_dir: img
+
+- url: /css
+  static_dir: css
+
+- url: /js
+  static_dir: js
+
+- url: /
+  script: main.php
+
+- url: /contact-email-send.php
+  script: contact-email-send.php
+
+# Serve php scripts.
+- url: /(.+\.php)$
+  script: \1
